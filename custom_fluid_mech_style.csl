@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
+  <info>
+    <title>Custom Fluid Mechanics Style</title>
+    <id>http://www.zotero.org/styles/custom-fluid-mech</id>
+    <link href="http://www.zotero.org/styles/custom-fluid-mech" rel="self"/>
+    <author>
+      <name>Mekete Custom CSL Generator</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="engineering"/>
+    <updated>2026-02-12T10:45:00+01:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with="."/>
+    </names>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="title">
+    <text variable="title" suffix="."/>
+  </macro>
+
+  <macro name="container">
+    <text variable="container-title" suffix=" "/>
+    <text variable="volume"/>
+    <text variable="issue" prefix="(" suffix=")"/>
+    <text variable="page" prefix=", pp. "/>
+    <text variable="ISSN" prefix=". ISSN: "/>
+  </macro>
+
+  <macro name="doi-url">
+    <text variable="DOI" prefix=". DOI: "/>
+    <text variable="URL" prefix=". URL: "/>
+  </macro>
+
+  <citation>
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <text macro="author"/>
+      <text macro="issued" prefix=" " />
+    </layout>
+  </citation>
+
+  <bibliography hanging-indent="true" line-spacing="1.35" entry-spacing="1">
+    <sort>
+      <key macro="author"/>
+      <key macro="issued"/>
+    </sort>
+    <layout>
+      <text macro="author" suffix=", "/>
+      <text macro="issued" suffix=". "/>
+      <text macro="title"/>
+      <text macro="container"/>
+      <text macro="doi-url"/>
+    </layout>
+  </bibliography>
+</style>
