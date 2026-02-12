@@ -4,30 +4,38 @@
     <title>Custom Fluid Mechanics Style</title>
     <id>http://www.zotero.org/styles/custom-fluid-mech</id>
     <link href="http://www.zotero.org/styles/custom-fluid-mech" rel="self"/>
+    <link href="http://www.zotero.org/styles/elsevier-harvard" rel="template"/>
     <author>
       <name>Mekete Custom CSL Generator</name>
     </author>
     <category citation-format="author-date"/>
     <category field="engineering"/>
+    <summary>Custom Harvard-style format for marine engineering and fluid mechanics journals.</summary>
     <updated>2026-02-12T10:45:00+01:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 
+  <!-- Author macro -->
   <macro name="author">
     <names variable="author">
       <name and="text" delimiter=", " initialize-with="."/>
+      <label form="short" prefix=" "/>
     </names>
   </macro>
 
+  <!-- Year -->
   <macro name="issued">
     <date variable="issued">
       <date-part name="year"/>
     </date>
   </macro>
 
+  <!-- Title -->
   <macro name="title">
     <text variable="title" suffix="."/>
   </macro>
 
+  <!-- Container: Journal, Volume, Issue, Pages, ISSN -->
   <macro name="container">
     <text variable="container-title" suffix=" "/>
     <text variable="volume"/>
@@ -36,18 +44,21 @@
     <text variable="ISSN" prefix=". ISSN: "/>
   </macro>
 
+  <!-- DOI and URL -->
   <macro name="doi-url">
     <text variable="DOI" prefix=". DOI: "/>
     <text variable="URL" prefix=". URL: "/>
   </macro>
 
+  <!-- In-text citations -->
   <citation>
     <layout prefix="(" suffix=")" delimiter="; ">
       <text macro="author"/>
-      <text macro="issued" prefix=" " />
+      <text macro="issued" prefix=" "/>
     </layout>
   </citation>
 
+  <!-- Bibliography -->
   <bibliography hanging-indent="true" line-spacing="1.35" entry-spacing="1">
     <sort>
       <key macro="author"/>
@@ -61,4 +72,5 @@
       <text macro="doi-url"/>
     </layout>
   </bibliography>
+
 </style>
